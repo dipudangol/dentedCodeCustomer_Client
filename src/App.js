@@ -6,7 +6,8 @@ import {
 } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import { Dashboard } from './pages/dashboard/Dashboard';
-
+import { Category } from './pages/category/Category';
+import { ProductByCategory } from './pages/productByCategory/ProductByCategory';
 
 function App() {
   return (
@@ -15,9 +16,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* public routes */}
-          <Route path="/" element={<Dashboard />} />s
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="/category/:slug" element={<ProductByCategory />} />
         </Routes>
       </BrowserRouter>
+
+
       <ToastContainer position="top-center"
         autoClose={4000}
         hideProgressBar={false}

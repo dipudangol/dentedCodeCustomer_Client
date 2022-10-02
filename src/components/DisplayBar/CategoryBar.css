@@ -1,0 +1,19 @@
+.category-card {
+  width: 150px;
+  height: 115px;
+}
+
+.category-card img {
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
+.category-card a,
+.category-header a {
+  text-decoration: none;
+  color: black;
+}
+.main {
+  padding: 20px;
+  margin: 20px;
+}
+
