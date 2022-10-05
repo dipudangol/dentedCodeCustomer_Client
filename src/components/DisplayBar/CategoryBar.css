@@ -1,6 +1,6 @@
 .category-card {
   width: 150px;
-  height: 115px;
+  height: auto;
 }
 
 .category-card img {

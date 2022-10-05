@@ -8,24 +8,27 @@ export const CategoryBar = ({ categories }) => {
   const activeCategories = Object.values(categories).filter((item) => item.status === "active");
   const parentCategory = Object.values(categories).filter((item) => item.parentId === null);
   console.log(parentCategory);
+
+
   return (
     <div>
       <div className='main'>
-        <div className='category-container' style={{ width: "100%", height: "180px" }}>
-          <div className='category-header d-flex gap-3 '>
+        <div className='category-container' style={{ width: "100%", height:"auto" }}>
+          <div className='category-header d-flex flex-wrap gap-3 '>
             <h4>Shop by Category</h4>
             <Link to="/category" className='mt-2 text-decoration-none'> See All --></Link>
           </div>
-          <div className='category-cards d-flex justify-content-around  w-100 py-1'>
+          <div className='category-cards d-flex justify-content-start flex-wrap
+ w-100 py-1'>
             {
               parentCategory.map((item, i) => (
-                <div className="category-card text-center ms-2">
-                  <img className='w-100 h-100'
+                <div className="category-card  text-center ms-2">
+                  <Link to={`/category/${item?._id}`}>
+                  <img className='w-75 h-auto'
                     src={item.thumbnail ? "http://localhost:8000" + item.thumbnail : "./Images/books.png"}
                     alt={item.slug}
                     crossOrigin='anonymous'
                   />
-                  <Link to={"/category/" + item._id}>
                     {item.name}
                   </Link>
                 </div>

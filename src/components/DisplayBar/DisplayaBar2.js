@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import "./DisplayaBar2.css";
 
 export const DisplayaBar2 = ({ productList, title }) => {
@@ -17,7 +18,7 @@ export const DisplayaBar2 = ({ productList, title }) => {
                                                 crossOrigin='anonymous' width="auto" height="auto"
                                             />
                                         </div>
-                                        <a class="product-detail-link" href="./product.html">{item.name} </a>
+                                        <Link to={`/product/${item?._id}`}>{item.name} </Link>
                                         <p>
                                             <strong class="product-price">${item.price}</strong>
                                         </p>

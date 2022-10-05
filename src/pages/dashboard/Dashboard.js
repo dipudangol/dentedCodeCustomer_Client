@@ -6,6 +6,7 @@ import { CategoryBar } from '../../components/DisplayBar/CategoryBar';
 import { DisplayaBar1 } from '../../components/DisplayBar/DisplayaBar1';
 import { DisplayaBar2 } from '../../components/DisplayBar/DisplayaBar2';
 import AdminLayout from '../../components/layout/AdminLayout'
+import { NavBarHeader } from '../../components/navBarHeader/NavBarHeader';
 import { getCategoryAction } from './categoryAction';
 import { getProductsAction } from './productAction';
 
@@ -27,6 +28,7 @@ export const Dashboard = () => {
   console.log(categories);
   return (
     <AdminLayout>
+      
       <Container>
 
         <div className='top-trending py-3'>

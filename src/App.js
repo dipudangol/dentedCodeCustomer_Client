@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify';
 import { Dashboard } from './pages/dashboard/Dashboard';
 import { Category } from './pages/category/Category';
 import { ProductByCategory } from './pages/productByCategory/ProductByCategory';
+import { ProductDetail } from './pages/product-detail/ProductDetail';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
           {/* public routes */}
           <Route path="/" element={<Dashboard />} />
           <Route path="/category" element={<Category />} />
-          <Route path="/category/:slug" element={<ProductByCategory />} />
+          <Route path="/category/:_id" element={<ProductByCategory />} />
+          <Route path="/product/:_id" element={<ProductDetail />} />
         </Routes>
       </BrowserRouter>
 

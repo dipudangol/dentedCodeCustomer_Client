@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Header.css";
 
 
@@ -7,11 +7,28 @@ import { Button, Container, Nav, Navbar } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from "react-router-dom"
 import Search from './Search';
+import { NavBarHeader } from '../navBarHeader/NavBarHeader';
+import { getProductsAction } from '../../pages/dashboard/productAction';
+import { getCategoryAction } from '../../pages/dashboard/categoryAction';
+
 
 
 
 
 export const Header = () => {
+
+  const { productList } = useSelector(state => state.products);
+  const { categories } = useSelector(state => state.category);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    !productList.length && dispatch(getProductsAction())
+    !categories.length && dispatch(getCategoryAction())
+
+
+  }, [dispatch, categories, productList]);
+
+  
   return (
     <>
       {/* <div className='header'>
@@ -60,7 +77,9 @@ export const Header = () => {
 
           </div>
         </nav>
+        
       </header>
+        <NavBarHeader categories={categories} />
     </>
   )
 }
