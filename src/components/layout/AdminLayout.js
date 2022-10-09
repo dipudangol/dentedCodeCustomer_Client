@@ -12,7 +12,8 @@ const AdminLayout = ({ children }) => {
             <Header />
 
             {/* sideMenu */}
-            <SideBar/>
+            {/* <SideBar/> */}
+
             {/* <SideMenu /> */}
             <main style={{ minHeight: "70vh" }} >{children}</main >
 

@@ -7,7 +7,7 @@ export const DisplayaBar2 = ({ productList, title }) => {
         <div>
             <section class="section-3">
                 <section class="section-3-container">
-                    <h3>{title}</h3>
+                    {/* <h3>{title}</h3> */}
                     <div class="product-detail-cards">
                         {
                             productList && productList.map((item, i) => (
