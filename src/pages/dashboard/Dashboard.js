@@ -25,7 +25,7 @@ export const Dashboard = () => {
 
   }, [dispatch, categories, productList]);
 
-  console.log(categories);
+  console.log(productList);
   return (
     <AdminLayout>
       
@@ -39,6 +39,7 @@ export const Dashboard = () => {
 
           {/* Section to display category */}
           <CategoryBar categories={categories} />
+          
           {/* Section to display recent products */}
           <DisplayaBar1 productList={productList} />
 

@@ -7,7 +7,7 @@ import "./CategoryBar.css";
 export const CategoryBar = ({ categories }) => {
   const activeCategories = Object.values(categories).filter((item) => item.status === "active");
   const parentCategory = Object.values(categories).filter((item) => item.parentId === null);
-  console.log(parentCategory);
+  console.log(parentCategory,activeCategories);
 
 
   return (
@@ -16,7 +16,7 @@ export const CategoryBar = ({ categories }) => {
         <div className='category-container' style={{ width: "100%", height:"auto" }}>
           <div className='category-header d-flex flex-wrap gap-3 '>
             <h4>Shop by Category</h4>
-            <Link to="/category" className='mt-2 text-decoration-none'> See All --></Link>
+            <Link to="/category" className='mt-2 text-decoration-none'> See All --</Link>
           </div>
           <div className='category-cards d-flex justify-content-start flex-wrap
  w-100 py-1'>

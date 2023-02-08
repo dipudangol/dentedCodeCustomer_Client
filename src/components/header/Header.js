@@ -28,7 +28,7 @@ export const Header = () => {
 
   }, [dispatch, categories, productList]);
 
-  
+
   return (
     <>
       {/* <div className='header'>
@@ -70,16 +70,16 @@ export const Header = () => {
               <p>Cart</p>
             </div>
             <div class="header-logins">
-              <h5 className='p-2 mt-2 '>Login | </h5>
-              <h5 className='p-2 mt-2'>Register</h5>
+              <h5 className='p-2 mt-2 '><Link to={`/login`} style={{ color: '#FFF', textDecoration: 'none' }}>  Login  </Link>|</h5>
+              <h5 className='p-2 mt-2'><Link to={`/register`} style={{ color: '#FFF', textDecoration: 'none' }}> Register</Link></h5>
             </div>
 
 
           </div>
         </nav>
-        
+
       </header>
-        <NavBarHeader categories={categories} />
+      <NavBarHeader categories={categories} />
     </>
   )
 }

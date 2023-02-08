@@ -16,9 +16,10 @@ export const ProductDetail = () => {
   const { categories } = useSelector(state => state.category);
   const dispatch = useDispatch();
   const { _id } = useParams();
+  // const slides = document.getElementsByClassName("mySlides");
+  // const dots = document.getElementsByClassName("demo");
+  // const captionText = document.getElementById("caption");
 
-
-  let slides, dots, captionText;
   let slideIndex = 1;
 
   const showSlides = (n) => {
@@ -34,12 +35,12 @@ export const ProductDetail = () => {
     for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
     }
-    // console.log(slides[slideIndex - 1].className);
-    if (slides.length > 0 || dots.length > 0) {
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-      captionText.innerHTML = dots[slideIndex - 1].alt;
-    }
+    console.log(slides);
+    // if (slides[slideIndex - 1] || dots.length > 0) {
+    //    slides[slideIndex - 1].style.display = "block";
+    //   dots[slideIndex - 1].className += " active";
+    //   captionText.innerHTML = captionText ? dots[slideIndex - 1].alt : null;
+    // }
   }
 
 
@@ -61,20 +62,19 @@ export const ProductDetail = () => {
       setData(select);
       setImg(select[0].images);
     }
-
   }
 
 
-  useEffect(() => {
+  useEffect (() => {
     !productList.length && dispatch(getProductsAction())
     !categories.length && dispatch(getCategoryAction())
     showSlides(1)
-    getProduct()
-  }, [dispatch, categories, productList,showSlides]);
+
+  }, [dispatch, categories, productList]);
 
 
-  console.log(img);
-
+  // console.log(img);
+  getProduct();
   return (
     <AdminLayout>
       {/* <!-- Container for the image gallery --> */}
@@ -86,7 +86,7 @@ export const ProductDetail = () => {
             <>
               <div class="mySlides">
                 <div class="numbertext">{i + 1} / {img.length}</div>
-                <img src={item ? "http://localhost:8000" + item : "https://images-eu.ssl-images-amazon.com/images/I/61aUBxqc5PL._AC_UL320_SR320,320_.jpg"} alt={item.sku}
+                <img src={item ? "http://localhost:8001" + item : "https://images-eu.ssl-images-amazon.com/images/I/61aUBxqc5PL._AC_UL320_SR320,320_.jpg"} alt={item.sku}
                   crossOrigin='anonymous' className="w-100 h-100"
                 />
                 {/* <img src="img_woods_wide.jpg" style={{ width: "100%" }} /> */}

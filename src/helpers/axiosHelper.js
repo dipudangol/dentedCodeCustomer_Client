@@ -47,8 +47,8 @@ const apiProcessor = async ({ method, url, data, isPrivate, token }) => {
     }
 }
 
-//====================================================Admin Users==========================================================================
-//post new admin user
+//==================================================== Users==========================================================================
+//post new  user
 export const postUser = (data) => {
     const option = {
         method: "post",
